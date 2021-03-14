@@ -1,6 +1,11 @@
 # Angular6-client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1 and node version 12.18.0
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1 and [Node](https://github.com/nodejs/node) version 12.18.0
+
+## Initial Install
+
+Run `npm install
+
 
 ## Development server
 
@@ -17,7 +22,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Run with Mock backend APIs
 1. Build the project
 2. Copy the dist folder to mdw folder
-3. start node in mdw folder using node app.js command
+3. Start node in mdw folder using node app.js command
+4. Navigate to `http://localhost:8081/`
 Please note this steps can be configured to run automatically while doing actual docker build
 
 
