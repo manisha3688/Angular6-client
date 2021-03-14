@@ -11,8 +11,13 @@ import { AccountDetails } from '../models/accountdetails';
 export class TransactionsDashboardComponent implements OnInit {
   accountDetails: AccountDetails[];
   transactionDetails: TransactionDetails[];
+  showSuccess: boolean;
+  showError: boolean;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+    this.showSuccess = false;
+    this.showError = false;
+  }
 
   ngOnInit(): void {
     this.getAccountDetails();
@@ -42,7 +47,17 @@ export class TransactionsDashboardComponent implements OnInit {
         if ( data && data.status ) {
           this.getAccountDetails();
           this.getTransactions();
+          this.showSuccess = true;
+        } else {
+          this.showError = true;
         }
+    }, error => {
+      this.showError = true;
     });
+  }
+
+  hideMessage(): void {
+    this.showSuccess = false;
+    this.showError = false;
   }
 }
