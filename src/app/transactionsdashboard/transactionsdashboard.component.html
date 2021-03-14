@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <app-transactionadd [accountDetails]="accountDetails" [transactionDetails]="transactionDetails" (addTransaction)="addTransactionDetails($event)"></app-transactionadd>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <app-transactiondetails [transactionDetails]="transactionDetails"></app-transactiondetails>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

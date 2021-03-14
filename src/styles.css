@@ -1,0 +1,47 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.transfer-form {
+  background-color: white;
+  height: fit-content;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+input, input:focus, select, select:focus  {
+  outline: 0 !important;
+  border-width: 0 0 2px !important;
+  border-radius: 0px !important;
+  box-shadow:none !important;
+}
+
+.form-control{
+  padding-left: 0px;
+  padding-right: 0px;
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.form-group label, .form-row label {
+  font-weight: 700;
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.transfer-form legend label {
+  width: calc(100% - 30px);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.input-group-text{
+  background-color: white;
+  border-width: 0 0 2px;
+  border-radius: 0px;
+  border-color:#ced4da;
+  padding-left: 0px;
+  line-height: 12px;
+  font-size: 12px;
+}

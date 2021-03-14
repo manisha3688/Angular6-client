@@ -1,0 +1,52 @@
+<form class="transfer-form" (ngSubmit)="addTransactionDetails()" autocomplete="off" [formGroup]="transactionForm">
+  <legend class="bg-info px-3">
+      <img src="../../assets/icons/arrows.png" alt="Transfer"/>
+      <label class="text-white text-center">Make a Transfer</label>
+  </legend>
+  <div class="form-group px-3">
+    <label for="from">FROM ACCOUNT</label>
+    <!--<input type="text" class="form-control" id="from" formControlName="from" placeholder="Enter">-->
+    <select class="form-control form-select" placeholder="Enter"  id="from" formControlName="from" aria-label="Select Account">
+      <option *ngFor="let accountDetail of accountDetails"  [ngValue]="accountDetail">
+        {{accountDetail.accountType+'('+accountDetail.accountLastFour
+          +') - $ '+accountDetail.balanceAmount}}
+      </option>
+    </select>
+    <div *ngIf="transactionForm.controls.from.invalid 
+      && (transactionForm.controls.from.dirty || transactionForm.controls.from.touched)" class="invalid-feedback">
+      <span *ngIf="transactionForm.controls.from.errors.required">Please select a valid account.</span>
+    </div>
+  </div>
+  <div class="form-group px-3">
+    <label for="to">TO ACCOUNT</label>
+    <input type="text" class="form-control" id="to"  formControlName="to" placeholder="Enter" (input)="suggest()">
+    <div class="autocomplete-items" *ngIf="suggestions.length">
+      <div *ngFor="let s of suggestions" (click)="selectMerchant(s)">{{s}}</div>
+    </div>
+    <div *ngIf="transactionForm.controls.to.invalid && 
+      (transactionForm.controls.to.dirty || transactionForm.controls.to.touched)" class="invalid-feedback">
+      <span *ngIf="transactionForm.controls.to.errors.required">Please enter a merchant name.</span>
+    </div>
+  </div>
+  <div class="form-group px-3">
+    <label for="amount">AMOUNT</label>
+    <div class="input-group"> 
+      <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+      </div>
+      <input type="number" placeholder="0.00" min="0.00" step="0.01" data-number-to-fixed="2" 
+        data-number-stepfactor="100" class="form-control currency" formControlName="amount"
+         id="amount" (change)="changeAmount()" />
+      <div *ngIf="transactionForm.controls.amount.invalid 
+        && (transactionForm.controls.amount.dirty || transactionForm.controls.amount.touched)" 
+        class="invalid-feedback">
+        <span *ngIf="transactionForm.controls.amount.errors.required">Please enter an amount.</span>
+        <span *ngIf="transactionForm.controls.amount.errors.max">Amount exceeds current balance.</span> 
+      </div>
+    </div>
+  </div>
+  <div class="form-group prim">
+    <button type="submit" class="m-3 btn btn-primary px-5 py-1">SUBMIT</button>
+  </div>
+  
+</form>

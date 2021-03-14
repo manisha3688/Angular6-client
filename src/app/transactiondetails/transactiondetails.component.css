@@ -1,0 +1,50 @@
+.form-row .sort .form-control{
+    display: inline-block;
+    width: auto;
+  }
+  
+  #sortBy {
+    width: calc(100% - 15px - 2rem);
+    float: right;
+    padding-left: 1rem
+  }
+  
+  #sortBy .btn-outline-secondary {
+    width: 33%;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .transfer-form .table {
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .transfer-form .table tr{
+    border-left: 6px solid;
+  }
+  
+  .transfer-form .table {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  .transfer-form .table th, .transfer-form .table td{
+    vertical-align: middle;
+  }
+  
+  .transfer-form  td p {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .transfer-form tr td:last-child {
+    text-align: right;
+    font-weight: 700;
+  }
+  
+  .transfer-form td em {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+  }

@@ -1,0 +1,13 @@
+{
+  "name": "Peach Tree Bank MDW",
+  "version": "0.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}

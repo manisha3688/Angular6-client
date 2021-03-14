@@ -1,0 +1,9 @@
+h1 {
+  font-family: OpenSans, Arial, Helvetica, sans-serif;
+}
+
+.page-header {
+  border-bottom: 2px solid orangered;
+  border-top: 1px solid orangered;
+  padding-left: 10%;
+}

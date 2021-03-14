@@ -1,0 +1,66 @@
+<form class="transfer-form" [formGroup]="transactionTableForm">
+  <legend class="bg-info px-3">
+      <img src="../../assets/icons/briefcase.png" alt="Transactions"/>
+      <label class="text-white text-center">Recent Transactions</label>
+  </legend>
+  <div class="form-row p-3">
+    <div class="col">
+      <input type="text" class="form-control" formControlName="searchBy" placeholder="Search by typing .."
+        (keyup)="delay(filterTransaction(),500)">
+    </div>
+    <div class="col sort">
+      <label for="sortBy">Sort by</label>
+      <div class="btn-group" id="sortBy" role="group" aria-label="Sort">
+        <button type="button" class="btn btn-outline-secondary" (click)="sortTransactions('transactionDate')">DATE
+          <svg *ngIf="transactionTableForm && transactionTableForm.controls['sortBy'] 
+            && transactionTableForm.controls['sortBy'].value=='transactionDate' && sortByOrder == 'DESC'"
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+          <svg *ngIf="transactionTableForm && transactionTableForm.controls['sortBy'] 
+              && transactionTableForm.controls['sortBy'].value=='transactionDate' && sortByOrder == 'ASC'" 
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>
+        </button>
+        <button type="button" class="btn btn-outline-secondary"  (click)="sortTransactions('merchant')">BENEFICIARY
+          <svg *ngIf="transactionTableForm && transactionTableForm.controls['sortBy'] 
+            && transactionTableForm.controls['sortBy'].value=='merchant' && sortByOrder == 'DESC'"
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+          <svg *ngIf="transactionTableForm && transactionTableForm.controls['sortBy'] 
+              && transactionTableForm.controls['sortBy'].value=='merchant' && sortByOrder == 'ASC'" 
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="sortTransactions('amount')">AMOUNT
+          <svg *ngIf="transactionTableForm && transactionTableForm.controls['sortBy'] 
+            && transactionTableForm.controls['sortBy'].value=='amount' && sortByOrder == 'DESC'"
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+          <svg *ngIf="transactionTableForm && transactionTableForm.controls['sortBy'] 
+              && transactionTableForm.controls['sortBy'].value=='amount' && sortByOrder == 'ASC'" 
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="form-row p-3 table-responsive">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let transaction of processedTransactionDetails" [ngStyle]="{'border-left-color':transaction.categoryCode}">
+          <td>
+            {{transaction.transactionDate  | date:'MMM. d, y'}}</td>
+          <td><img *ngIf="transaction.merchantLogo" src="{{transaction.merchantLogo}}" height="40px" width="40px"/></td>
+          <td><p><em>{{transaction.merchant}}</em><br/>{{transaction.transactionType}}</p></td>
+          <td>-${{transaction.amount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
