@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Initial Install
 
-Run `npm install in primary folder as well as inside of mdw folder for the angular application and node application respectively.
+Run `npm install` in primary folder as well as inside of mdw folder for the angular application and node application respectively.
 
 
 ## Development server
