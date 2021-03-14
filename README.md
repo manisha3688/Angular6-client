@@ -27,7 +27,7 @@ Run `ng lint` to execute linting of code via [TsLint](https://palantir.github.io
 ## Run with Mock backend APIs
 1. Build the project
 2. Copy the dist folder to mdw folder
-3. Start node in mdw folder using node app.js command
+3. Start node in mdw folder using `node app.js` command
 4. Navigate to `http://localhost:8081/`
 
 Please note this steps can be configured to run automatically while doing actual docker build
