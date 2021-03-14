@@ -22,7 +22,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running tslint
 
-Run `ng lint` to execute linting of clove via [TsLint](https://palantir.github.io/tslint/usage/cli/).
+Run `ng lint` to execute linting of code via [TsLint](https://palantir.github.io/tslint/usage/cli/).
 
 ## Run with Mock backend APIs
 1. Build the project
