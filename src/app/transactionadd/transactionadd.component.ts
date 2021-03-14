@@ -48,7 +48,7 @@ export class TransactionAddComponent implements OnInit, OnChanges, OnDestroy {
 
     this.fromValueChangeSubscription = this.transactionForm.controls['from'].valueChanges
       .subscribe((value: AccountDetails) => {
-        if( value ) {
+        if ( value ) {
           this.transactionForm.controls['amount'].setValidators(Validators.max(value.balanceAmount));
           this.transactionForm.controls['amount'].updateValueAndValidity();
         }
