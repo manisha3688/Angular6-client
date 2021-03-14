@@ -15,9 +15,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Running unit tests with code coverage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Check generated code coverage report under coverage folder.
+
+## Running tslint
+
+Run `ng lint` to execute linting of clove via [TsLint](https://palantir.github.io/tslint/usage/cli/).
 
 ## Run with Mock backend APIs
 1. Build the project
